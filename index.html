@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +12,27 @@
         :root {
             --bg-color: #0a0a0f;
             --text-main: #e2e8f0;
+            --text-subtle: #cbd5e1;
             --accent-glow: #00f0ff;
-            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --badge-bg: rgba(0, 240, 255, 0.1);
+            --badge-border: rgba(0, 240, 255, 0.3);
+            --thumb-bg: #141420;
+            --hero-glow: radial-gradient(circle at 50% -20%, rgba(0, 240, 255, 0.18), transparent 65%);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f8fafc;
+            --text-main: #0f172a;
+            --text-subtle: #475569;
+            --accent-glow: #0891b2;
+            --card-bg: #ffffff;
+            --card-border: rgba(15, 23, 42, 0.1);
+            --badge-bg: rgba(8, 145, 178, 0.1);
+            --badge-border: rgba(8, 145, 178, 0.3);
+            --thumb-bg: #e2e8f0;
+            --hero-glow: radial-gradient(circle at 50% -20%, rgba(8, 145, 178, 0.12), transparent 65%);
         }
         
         body {
@@ -21,52 +40,116 @@
             color: var(--text-main);
             font-family: 'Space Grotesk', sans-serif;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--card-bg);
+            border: 1px solid var(--accent-glow);
+            color: var(--accent-glow);
+            border-radius: 50px;
+            padding: 8px 18px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--accent-glow);
+            color: #fff;
+            transform: scale(1.05);
         }
 
         .hero-section {
-            padding: 120px 0 80px;
-            background: radial-gradient(circle at 50% -20%, rgba(0, 240, 255, 0.15), transparent 60%);
+            padding: 130px 0 80px;
+            background: var(--hero-glow);
         }
 
         .glitch-text {
             font-size: 3.5rem;
             font-weight: 700;
-            background: linear-gradient(90deg, #fff, var(--accent-glow));
+            background: linear-gradient(90deg, var(--text-main), var(--accent-glow));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
         }
 
+        .text-subtle {
+            color: var(--text-subtle) !important;
+        }
+
         .metric-badge {
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid rgba(0, 240, 255, 0.3);
+            background: var(--badge-bg);
+            border: 1px solid var(--badge-border);
             border-radius: 50px;
             padding: 8px 16px;
             font-size: 0.9rem;
             color: var(--accent-glow);
             display: inline-block;
             margin: 5px;
+            font-weight: 500;
         }
 
         .card-custom {
             background: var(--card-bg);
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid var(--card-border);
             border-radius: 16px;
-            padding: 30px;
+            padding: 24px;
             transition: all 0.3s ease;
             height: 100%;
+            display: flex;
+            flex-direction: column;
             backdrop-filter: blur(10px);
         }
 
         .card-custom:hover {
             transform: translateY(-5px);
             border-color: var(--accent-glow);
-            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.12);
+        }
+
+        .project-thumb-box {
+            width: 100%;
+            height: 160px;
+            border-radius: 10px;
+            background: var(--thumb-bg);
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed var(--accent-glow);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--accent-glow);
+            transition: all 0.3s ease;
+        }
+
+        .project-thumb-box i {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-thumb-box:hover {
+            background: rgba(0, 240, 255, 0.08);
+            color: var(--accent-glow);
+        }
+
+        .project-thumb-box:hover i {
+            transform: scale(1.15);
         }
 
         .tool-icon {
-            font-size: 2rem;
-            margin-right: 15px;
+            font-size: 1.8rem;
+            margin-right: 12px;
             color: var(--accent-glow);
         }
 
@@ -87,17 +170,48 @@
             background: var(--accent-glow);
         }
 
-        a { color: var(--accent-glow); text-decoration: none; }
-        a:hover { color: #fff; }
+        .btn-outline-custom {
+            border: 1px solid var(--accent-glow);
+            color: var(--accent-glow);
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+
+        .btn-outline-custom:hover {
+            background: var(--accent-glow);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 240, 255, 0.25);
+        }
+
+        .custom-badge {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Toggle Theme Button -->
+    <button class="theme-toggle-btn" id="themeToggle">
+        <i class="fa-solid fa-sun" id="themeIcon"></i> <span id="themeText">Light Mode</span>
+    </button>
 
     <header class="hero-section text-center">
         <div class="container">
             <h1 class="glitch-text">DANG QUANG NGHIA</h1>
             <h3 class="mb-4">AI Video Director & Content Automation Specialist</h3>
-            <p class="lead mb-4 mx-auto" style="max-width: 700px;">
+            <p class="lead mb-4 mx-auto text-subtle" style="max-width: 720px;">
                 Merging the systematic mindset of a Software Engineer with the creativity of a Content Creator. Specializing in applying AI and Python workflows to automate high-quality, large-scale digital content production, particularly in the Web3 & Crypto space.
             </p>
             <div class="metrics">
@@ -108,94 +222,167 @@
         </div>
     </header>
 
+    <!-- Tech Stack & Workflows -->
     <section class="container py-5">
         <h2 class="section-title">Tech Stack & Automation Workflows</h2>
         <div class="row g-4 mt-2">
             <div class="col-md-6">
                 <div class="card-custom">
-                    <h4><i class="fa-solid fa-microchip tool-icon"></i>AI Tool Stack</h4>
-                    <p class="text-muted mb-3">Mastering the world's leading Generative AI tools to optimize visual and audio content.</p>
-                    <div>
-                        <span class="badge bg-secondary mb-2">Google Veo 3</span>
-                        <span class="badge bg-secondary mb-2">Midjourney</span>
-                        <span class="badge bg-secondary mb-2">Higgsfield AI</span>
-                        <span class="badge bg-secondary mb-2">SUNO AI</span>
-                        <span class="badge bg-secondary mb-2">ElevenLabs</span>
-                        <span class="badge bg-secondary mb-2">Premiere Pro & AE</span>
+                    <h4 class="d-flex align-items-center mb-3"><i class="fa-solid fa-microchip tool-icon"></i>AI Tool Stack</h4>
+                    <p class="text-subtle mb-3">Mastering the world's leading Generative AI tools to optimize visual and audio content.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="custom-badge">Google Veo 3</span>
+                        <span class="custom-badge">Midjourney</span>
+                        <span class="custom-badge">Higgsfield AI</span>
+                        <span class="custom-badge">SUNO AI</span>
+                        <span class="custom-badge">ElevenLabs</span>
+                        <span class="custom-badge">Blender</span>
+                        <span class="custom-badge">Premiere Pro & AE</span>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card-custom">
-                    <h4><i class="fa-solid fa-robot tool-icon"></i>Python + Gemini API Workflow</h4>
-                    <p class="text-muted">Going beyond manual editing, I build robust automated digital content systems.</p>
-                    <ul class="list-unstyled">
-                        <li><i class="fa-solid fa-check text-success me-2"></i>Integrating Python & LLMs (Gemini) for bulk script generation.</li>
-                        <li><i class="fa-solid fa-check text-success me-2"></i>Automating image/video rendering, reducing production time by 80%.</li>
-                        <li><i class="fa-solid fa-check text-success me-2"></i>Strong logical foundation: 2nd Prize in Hue-ICT Challenge & Provincial Informatics Award.</li>
+                    <h4 class="d-flex align-items-center mb-3"><i class="fa-solid fa-robot tool-icon"></i>Python + Gemini API Workflow</h4>
+                    <p class="text-subtle mb-3">Going beyond manual editing, I build robust automated digital content systems.</p>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2 text-subtle"><i class="fa-solid fa-circle-check text-info me-2"></i>Integrating Python & LLMs (Gemini) for bulk script generation.</li>
+                        <li class="mb-2 text-subtle"><i class="fa-solid fa-circle-check text-info me-2"></i>Automating image/video rendering, reducing production time by 80%.</li>
+                        <li class="text-subtle"><i class="fa-solid fa-circle-check text-info me-2"></i>Strong logical foundation: 2nd Prize in Hue-ICT Challenge & Provincial Informatics Award.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Featured Projects & Achievements -->
     <section class="container py-5">
         <h2 class="section-title">Featured Projects & Achievements</h2>
         <div class="row g-4 mt-2">
             
+            <!-- FOOH Studio AIM -->
             <div class="col-lg-6">
                 <div class="card-custom">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
+                    <a href="https://www.instagram.com/p/DbcyegvzpGK/" target="_blank" class="project-thumb-box">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span class="fw-semibold">View FOOH Showcase Video</span>
+                    </a>
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5>Studio AIM FOOH Video Campaign</h5>
+                        <span class="badge bg-info text-dark">Full Production</span>
+                    </div>
+                    <p class="text-subtle">Directly handled end-to-end production for the CGI/FOOH (Fake Out Of Home) video project at Studio AIM, combining 3D spatial integration and realistic motion tracking.</p>
+                    <div class="mt-auto pt-3">
+                        <a href="https://www.instagram.com/p/DbcyegvzpGK/" target="_blank" class="btn-outline-custom">
+                            Watch on Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Etherfuse After Effects -->
+            <div class="col-lg-6">
+                <div class="card-custom">
+                    <a href="https://x.com/Ecrypto_VN/status/1970772073350914129" target="_blank" class="project-thumb-box">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span class="fw-semibold">Watch Etherfuse Promo Video</span>
+                    </a>
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5>Etherfuse Motion Graphic Video</h5>
+                        <span class="badge bg-primary">After Effects 100%</span>
+                    </div>
+                    <p class="text-subtle">Created entirely in Adobe After Effects to showcase and market the Etherfuse project with dynamic motion design, kinetic typography, and Web3 visual aesthetics.</p>
+                    <div class="mt-auto pt-3">
+                        <a href="https://x.com/Ecrypto_VN/status/1970772073350914129" target="_blank" class="btn-outline-custom">
+                            Watch Video <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UPCX Contest -->
+            <div class="col-lg-6">
+                <div class="card-custom">
+                    <a href="https://x.com/Ecrypto_VN/status/1852994541424697774/video/1" target="_blank" class="project-thumb-box">
+                        <i class="fa-solid fa-play"></i>
+                        <span class="fw-semibold">Watch UPCX Music Video</span>
+                    </a>
+                    <div class="d-flex justify-content-between align-items-start mb-2">
                         <h5>UPCX Contest: Green, Meme, Mania!</h5>
                         <span class="badge bg-warning text-dark"><i class="fa-solid fa-crown"></i> TOP 1</span>
                     </div>
-                    <p>Produced AI-generated music videos for the UPCX contest and event marketing. Optimized viral and meme elements tailored for the Crypto space.</p>
+                    <p class="text-subtle">Produced AI-generated music videos for the UPCX contest and event marketing. Optimized viral and meme elements tailored for the Crypto space.</p>
                     <div class="mb-3">
                         <span class="metric-badge"><i class="fa-solid fa-eye"></i> 1,359 Views</span>
                     </div>
                     <div class="mt-auto">
-                        <a href="https://x.com/Ecrypto_VN/status/1852994541424697774/video/1" target="_blank" class="btn btn-outline-info btn-sm">Watch Video <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://x.com/Ecrypto_VN/status/1852994541424697774/video/1" target="_blank" class="btn-outline-custom">
+                            Watch Video <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
+            <!-- ElevenLabs Contest -->
             <div class="col-lg-6">
                 <div class="card-custom">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
+                    <a href="https://x.com/matt_elevenlabs/status/2009209588478849228" target="_blank" class="project-thumb-box">
+                        <i class="fa-solid fa-music"></i>
+                        <span class="fw-semibold">Listen to Winning Entry</span>
+                    </a>
+                    <div class="d-flex justify-content-between align-items-start mb-2">
                         <h5>ElevenLabs Christmas Music Contest</h5>
                         <span class="badge bg-secondary"><i class="fa-solid fa-medal"></i> TOP 2</span>
                     </div>
-                    <p>Utilized ElevenLabs and other AI tools to create a Christmas music piece, standing out among thousands of global entries.</p>
+                    <p class="text-subtle">Utilized ElevenLabs and other AI tools to create a Christmas music piece, standing out among thousands of global entries.</p>
                     <div class="mt-auto pt-3">
-                        <a href="https://x.com/matt_elevenlabs/status/2009209588478849228" target="_blank" class="btn btn-outline-info btn-sm">View Entry <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://x.com/matt_elevenlabs/status/2009209588478849228" target="_blank" class="btn-outline-custom">
+                            View Entry <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
+            <!-- LBank & Bitget -->
             <div class="col-lg-6">
                 <div class="card-custom">
+                    <div class="project-thumb-box">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="fw-semibold">Exchange Growth Assets</span>
+                    </div>
                     <h5>LBank Exchange & Bitget Campaigns</h5>
-                    <p>Produced high-quality promotional videos and infographics for top-tier exchanges. Achieved full coverage across Bitget Vietnam's social media platforms.</p>
+                    <p class="text-subtle">Produced high-quality promotional videos and infographics for top-tier exchanges. Achieved full coverage across Bitget Vietnam's social media platforms.</p>
                     <div class="mb-3">
                         <span class="metric-badge">LBank Video: 2,475 Views</span>
                         <span class="metric-badge">Bitget Builder (1 Year)</span>
                     </div>
-                    <div>
-                        <a href="https://x.com/Ecrypto_VN/status/1942837904432365758/video/1" target="_blank" class="me-3">LBank Video</a>
-                        <a href="https://drive.google.com/drive/folders/1MKIvpZChBVH8TsdNod9njfoAp5OD7s8m?usp=sharing" target="_blank">Bitget Infographics</a>
+                    <div class="mt-auto d-flex flex-wrap gap-2">
+                        <a href="https://x.com/Ecrypto_VN/status/1942837904432365758/video/1" target="_blank" class="btn-outline-custom">
+                            <i class="fa-solid fa-video"></i> LBank Video
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/1MKIvpZChBVH8TsdNod9njfoAp5OD7s8m?usp=sharing" target="_blank" class="btn-outline-custom">
+                            <i class="fa-solid fa-folder-open"></i> Bitget Infographics
+                        </a>
                     </div>
                 </div>
             </div>
 
+            <!-- Floki Marketing -->
             <div class="col-lg-6">
                 <div class="card-custom">
+                    <a href="https://x.com/Ecrypto_VN/status/1976723425608843528/video/1" target="_blank" class="project-thumb-box">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <span class="fw-semibold">Watch Guerrilla Video</span>
+                    </a>
                     <h5>Floki Guerrilla Marketing</h5>
-                    <p>Directly conceptualized, scripted, filmed, and edited the guerrilla marketing campaign for the Floki project.</p>
+                    <p class="text-subtle">Directly conceptualized, scripted, filmed, and edited the guerrilla marketing campaign for the Floki project.</p>
                     <div class="mb-3">
                         <span class="metric-badge">Floki Video: 1,657 Views</span>
                     </div>
                     <div class="mt-auto">
-                        <a href="https://x.com/Ecrypto_VN/status/1976723425608843528/video/1" target="_blank" class="btn btn-outline-info btn-sm">Watch Floki Video <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://x.com/Ecrypto_VN/status/1976723425608843528/video/1" target="_blank" class="btn-outline-custom">
+                            Watch Floki Video <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -203,20 +390,21 @@
         </div>
     </section>
 
+    <!-- Experience & Education -->
     <section class="container py-5 mb-5">
         <h2 class="section-title">Experience & Education</h2>
         <div class="row">
             <div class="col-12">
                 <div class="card-custom">
                     <ul class="list-group list-group-flush bg-transparent">
-                        <li class="list-group-item bg-transparent text-white border-secondary py-3">
-                            <strong>FPT University & Chulalongkorn University (Thailand)</strong> - Full Scholarship & International Study Experience.
+                        <li class="list-group-item bg-transparent text-subtle border-secondary py-3">
+                            <strong class="text-main">FPT University & Chulalongkorn University (Thailand)</strong> - Full Scholarship & International Study Experience.
                         </li>
-                        <li class="list-group-item bg-transparent text-white border-secondary py-3">
-                            <strong>Technical Awards:</strong> 2nd Prize Hue-ICT Challenge 2022, 3rd & Consolation Prizes in Provincial Excellent Student Competition in Informatics (Quang Binh).
+                        <li class="list-group-item bg-transparent text-subtle border-secondary py-3">
+                            <strong class="text-main">Technical Awards:</strong> 2nd Prize Hue-ICT Challenge 2022, 3rd & Consolation Prizes in Provincial Excellent Student Competition in Informatics (Quang Binh).
                         </li>
-                        <li class="list-group-item bg-transparent text-white border-secondary py-3">
-                            <strong>Multifaceted Roles:</strong> Multimedia Localization Specialist, Content Creator, Builder and Shiller within the Web3 ecosystem.
+                        <li class="list-group-item bg-transparent text-subtle border-secondary py-3">
+                            <strong class="text-main">Multifaceted Roles:</strong> Multimedia Localization Specialist, Content Creator, Builder and Shiller within the Web3 ecosystem.
                         </li>
                     </ul>
                 </div>
@@ -224,5 +412,33 @@
         </div>
     </section>
 
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
+        const html = document.documentElement;
+
+        // Kiểm tra preference trước đó
+        const savedTheme = localStorage.getItem('site-theme') || 'dark';
+        applyTheme(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+            localStorage.setItem('site-theme', newTheme);
+        });
+
+        function applyTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            if (theme === 'light') {
+                themeIcon.className = 'fa-solid fa-moon';
+                themeText.textContent = 'Dark Mode';
+            } else {
+                themeIcon.className = 'fa-solid fa-sun';
+                themeText.textContent = 'Light Mode';
+            }
+        }
+    </script>
 </body>
 </html>
