@@ -723,8 +723,31 @@ a.work-visual:hover { filter: brightness(1.08); }
 
 .about-grid {
   display: grid;
-  grid-template-columns: .75fr 1.25fr;
-  gap: 100px;
+  grid-template-columns: .72fr .62fr 1.16fr;
+  gap: clamp(32px, 4vw, 64px);
+  align-items: start;
+}
+
+.about-photo {
+  margin: 0;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 65%;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.about-photo figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: .76rem;
+  letter-spacing: .02em;
 }
 
 .about-copy { max-width: 760px; }
