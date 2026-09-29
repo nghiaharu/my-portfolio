@@ -496,6 +496,63 @@ a.work-visual:hover { filter: brightness(1.08); }
 .work-body p { color: var(--muted); min-height: 52px; }
 .link-row { display: flex; flex-wrap: wrap; gap: 18px; }
 
+.video-preview {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #050507;
+  border-bottom: 1px solid var(--line);
+}
+
+.video-preview iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.video-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  pointer-events: none;
+}
+
+.work-kicker {
+  display: block;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .72rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.work-title {
+  font-size: 1.55rem;
+  line-height: 1.1;
+  letter-spacing: -.025em;
+  margin: 0 0 12px;
+}
+
+.project-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 14px 0 18px;
+  margin-bottom: 18px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+.project-facts b {
+  color: var(--text);
+  margin-right: 5px;
+  font-weight: 600;
+}
+
 .work-card-cta {
   padding: 34px;
   min-height: 410px;
