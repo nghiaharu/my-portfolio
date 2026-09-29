@@ -504,11 +504,32 @@ a.work-visual:hover { filter: brightness(1.08); }
   border-bottom: 1px solid var(--line);
 }
 
-.video-preview iframe {
+.video-preview video {
   width: 100%;
   height: 100%;
   display: block;
-  border: 0;
+  object-fit: cover;
+  transition: transform .35s ease, filter .35s ease;
+}
+
+.video-preview:hover video {
+  transform: scale(1.015);
+  filter: brightness(.88);
+}
+
+.preview-hint {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.52);
+  border: 1px solid rgba(255,255,255,.16);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  opacity: .86;
 }
 
 .video-badge {
