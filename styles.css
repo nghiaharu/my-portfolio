@@ -615,7 +615,10 @@ a.work-visual:hover { filter: brightness(1.08); }
 }
 
 .poster-preview {
+  display: block;
   position: relative;
+  text-decoration: none;
+  color: inherit;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #08080a;
@@ -766,6 +769,18 @@ a.work-visual:hover { filter: brightness(1.08); }
 .contact h2 { max-width: 760px; }
 .contact p { color: #c9c9d0; max-width: 700px; margin: 20px 0 0; }
 .contact-actions { display: flex; flex-direction: column; gap: 12px; }
+
+.footer-email {
+  display: inline-block;
+  margin-left: 10px;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.28);
+}
+
+.footer-email:hover {
+  border-bottom-color: var(--accent);
+}
 
 .footer {
   padding: 24px 0 36px;
