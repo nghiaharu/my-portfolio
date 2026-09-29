@@ -429,6 +429,46 @@ h1 span {
   background: var(--surface);
 }
 
+.social-embed {
+  position: relative;
+  min-height: 300px;
+  padding: 18px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(111,184,255,.10), transparent 30%),
+    #0c0c0f;
+  border-bottom: 1px solid var(--line);
+}
+
+.social-embed-featured {
+  min-height: 470px;
+  border-bottom: 0;
+}
+
+.social-embed blockquote {
+  width: 100% !important;
+  max-width: 540px !important;
+  margin: 0 auto !important;
+}
+
+.social-embed .instagram-media {
+  min-width: 0 !important;
+}
+
+.embed-tag,
+.embed-card-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 3;
+}
+
+.embed-card-badge {
+  pointer-events: none;
+}
+
 .work-visual {
   min-height: 300px;
   padding: 22px;
