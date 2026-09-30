@@ -11,7 +11,6 @@ const translations = {
       ".nav a:nth-child(3)": "Process",
       ".nav a:nth-child(4)": "About",
       ".header-actions .button-small": "Work with me",
-      ".eyebrow": "Available for project-based & ongoing remote collaboration",
       ".hero-lead": "I turn briefs into polished generative video deliverables for social, commercial, and FOOH-style content — with a focus on clear execution, fast iteration, and reliable delivery.",
       ".hero-actions .button:nth-child(1)": "View selected work",
       ".hero-actions .button:nth-child(2)": "Message on LinkedIn",
@@ -113,7 +112,14 @@ const translations = {
       ".footer-inner > div:nth-child(2)": "Selected work is shown for portfolio purposes. Rights remain with their respective owners."
     },
     html: {
-      ".hero-copy h1": "AI video production for <span>creative teams.</span>"
+      ".eyebrow": "<span class=\"dot\"></span> Available for project-based & ongoing remote collaboration",
+      ".hero-copy h1": "AI video production for <span>creative teams.</span>",
+      ".work-grid .work-card:nth-child(3) .project-facts span:nth-child(1)": "<b>Role</b> Video production",
+      ".work-grid .work-card:nth-child(3) .project-facts span:nth-child(2)": "<b>Deliverable</b> 16:9 social video",
+      ".work-grid .work-card:nth-child(6) .project-facts span:nth-child(1)": "<b>Role</b> AI video production & edit",
+      ".work-grid .work-card:nth-child(6) .project-facts span:nth-child(2)": "<b>Format</b> 9:16 commercial",
+      ".work-grid .work-card:nth-child(7) .project-facts span:nth-child(1)": "<b>Role</b> AI video production",
+      ".work-grid .work-card:nth-child(7) .project-facts span:nth-child(2)": "<b>Focus</b> Character consistency & storytelling"
     }
   },
   vi: {
@@ -125,7 +131,6 @@ const translations = {
       ".nav a:nth-child(3)": "Quy trình",
       ".nav a:nth-child(4)": "Giới thiệu",
       ".header-actions .button-small": "Hợp tác",
-      ".eyebrow": "Nhận dự án ngắn hạn và hợp tác remote dài hạn",
       ".hero-lead": "Tôi biến brief thành video AI hoàn chỉnh cho social, quảng cáo và FOOH — tập trung vào triển khai rõ ràng, chỉnh sửa nhanh và bàn giao đáng tin cậy.",
       ".hero-actions .button:nth-child(1)": "Xem dự án nổi bật",
       ".hero-actions .button:nth-child(2)": "Nhắn qua LinkedIn",
@@ -227,7 +232,14 @@ const translations = {
       ".footer-inner > div:nth-child(2)": "Các dự án được hiển thị cho mục đích portfolio. Quyền sở hữu thuộc về các bên tương ứng."
     },
     html: {
-      ".hero-copy h1": "Sản xuất AI video cho <span>creative team.</span>"
+      ".eyebrow": "<span class=\"dot\"></span> Nhận dự án ngắn hạn và hợp tác remote dài hạn",
+      ".hero-copy h1": "Sản xuất AI video cho <span>creative team.</span>",
+      ".work-grid .work-card:nth-child(3) .project-facts span:nth-child(1)": "<b>Vai trò</b> Sản xuất video",
+      ".work-grid .work-card:nth-child(3) .project-facts span:nth-child(2)": "<b>Bàn giao</b> Video social 16:9",
+      ".work-grid .work-card:nth-child(6) .project-facts span:nth-child(1)": "<b>Vai trò</b> Sản xuất & dựng AI video",
+      ".work-grid .work-card:nth-child(6) .project-facts span:nth-child(2)": "<b>Định dạng</b> Quảng cáo 9:16",
+      ".work-grid .work-card:nth-child(7) .project-facts span:nth-child(1)": "<b>Vai trò</b> Sản xuất AI video",
+      ".work-grid .work-card:nth-child(7) .project-facts span:nth-child(2)": "<b>Trọng tâm</b> Nhất quán nhân vật & storytelling"
     }
   }
 };
