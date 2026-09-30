@@ -1,1 +1,271 @@
-document.getElementById("year").textContent = new Date().getFullYear();
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
+
+const translations = {
+  en: {
+    title: "Dang Quang Nghia | AI Video Production",
+    description: "AI video production for agencies, studios, and creative teams. Generative video, FOOH concepts, social content, motion design, and production support.",
+    text: {
+      ".nav a:nth-child(1)": "Work",
+      ".nav a:nth-child(2)": "Services",
+      ".nav a:nth-child(3)": "Process",
+      ".nav a:nth-child(4)": "About",
+      ".header-actions .button-small": "Work with me",
+      ".eyebrow": "Available for project-based & ongoing remote collaboration",
+      ".hero-lead": "I turn briefs into polished generative video deliverables for social, commercial, and FOOH-style content — with a focus on clear execution, fast iteration, and reliable delivery.",
+      ".hero-actions .button:nth-child(1)": "View selected work",
+      ".hero-actions .button:nth-child(2)": "Message on LinkedIn",
+      ".hero-meta span:nth-child(1)": "Vietnam · Remote",
+      ".hero-meta span:nth-child(2)": "AI Video Production",
+      ".hero-meta span:nth-child(3)": "Commercial & Social Content",
+      ".panel-label": "Production focus",
+      ".focus-item:nth-child(1) strong": "Generative video",
+      ".focus-item:nth-child(1) small": "Brief-to-delivery execution",
+      ".focus-item:nth-child(2) strong": "FOOH & visual concepts",
+      ".focus-item:nth-child(2) small": "Social-first creative outputs",
+      ".focus-item:nth-child(3) strong": "Agency production support",
+      ".focus-item:nth-child(3) small": "Extra capacity when workloads spike",
+      ".panel-note": "Currently producing AI video deliverables for a Korean creative team.",
+      "#work .section-heading .kicker": "Selected work",
+      "#work .section-heading h2": "Proof before promises.",
+      "#work .section-heading > p": "Selected public work and campaign outputs. Links open the original published source where available.",
+      ".featured-case .visual-tag": "Featured case · Original post",
+      ".featured-case .case-copy h3": "Turning an assigned creative brief into a finished social video.",
+      ".featured-case .case-copy > p": "Produced the assigned FOOH-style video deliverable for Studio AIM based on the team's direction, iterating through production feedback and returning the final output.",
+      ".featured-case .case-grid div:nth-child(1) span": "Role",
+      ".featured-case .case-grid div:nth-child(1) strong": "AI video production",
+      ".featured-case .case-grid div:nth-child(2) span": "Format",
+      ".featured-case .case-grid div:nth-child(2) strong": "Short-form social video",
+      ".featured-case .case-grid div:nth-child(3) span": "Public performance",
+      ".featured-case .case-grid div:nth-child(3) strong": "140K+ views · 2K+ likes",
+      ".featured-case .text-link": "View published project ↗",
+      ".work-grid .work-card:nth-child(1) .work-body p": "Created an AI-assisted Christmas music entry selected as a Top 2 result in the contest.",
+      ".work-grid .work-card:nth-child(1) .text-link": "View entry ↗",
+      ".work-grid .work-card:nth-child(2) .work-body p": "Produced an AI-generated music video built around the campaign's meme-led creative direction.",
+      ".work-grid .work-card:nth-child(2) .text-link": "Watch project ↗",
+      ".work-grid .work-card:nth-child(3) .video-badge": "Campaign work",
+      ".work-grid .work-card:nth-child(3) .preview-hint": "Preview · Open full video ↗",
+      ".work-grid .work-card:nth-child(3) .work-kicker": "Social Campaign · English Version",
+      ".work-grid .work-card:nth-child(3) .work-body p": "Produced a short-form product explainer for Bitget Pay, designed for clear social viewing and platform-led campaign content.",
+      ".work-grid .work-card:nth-child(3) .project-facts span:nth-child(1)": "Role · Video production",
+      ".work-grid .work-card:nth-child(3) .project-facts span:nth-child(2)": "Deliverable · 16:9 social video",
+      ".work-grid .work-card:nth-child(3) .link-row .text-link:nth-child(1)": "Watch full video ↗",
+      ".work-grid .work-card:nth-child(3) .link-row .text-link:nth-child(2)": "LBank work ↗",
+      ".work-grid .work-card:nth-child(4) .embed-card-badge": "Motion design",
+      ".work-grid .work-card:nth-child(4) .work-body p": "Created a motion graphic promo using dynamic typography and Web3 visual language in Adobe After Effects.",
+      ".work-grid .work-card:nth-child(4) .text-link": "Watch project ↗",
+      ".work-grid .work-card:nth-child(5) .embed-card-badge": "Earlier work",
+      ".work-grid .work-card:nth-child(5) .work-body p": "Conceptualized, scripted, filmed, and edited a guerrilla-style marketing video for the Floki ecosystem.",
+      ".work-grid .work-card:nth-child(5) .text-link": "Watch project ↗",
+      ".work-grid .work-card:nth-child(6) .poster-badge": "Commercial",
+      ".work-grid .work-card:nth-child(6) .preview-hint": "Preview · Watch full video ↗",
+      ".work-grid .work-card:nth-child(6) .work-kicker": "Product TVC · 9:16",
+      ".work-grid .work-card:nth-child(6) .work-title": "Short-form Product Commercial",
+      ".work-grid .work-card:nth-child(6) .work-body p": "Created a vertical product-focused TVC with polished pack shots, flavor variation, motion, and social-first pacing.",
+      ".work-grid .work-card:nth-child(6) .project-facts span:nth-child(1)": "Role · AI video production & edit",
+      ".work-grid .work-card:nth-child(6) .project-facts span:nth-child(2)": "Format · 9:16 commercial",
+      ".work-grid .work-card:nth-child(6) .text-link": "Watch full video ↗",
+      ".work-grid .work-card:nth-child(7) .poster-badge": "Application test",
+      ".work-grid .work-card:nth-child(7) .preview-hint": "Preview · Watch full video ↗",
+      ".work-grid .work-card:nth-child(7) .work-kicker": "Character Storytelling · Personal Assignment",
+      ".work-grid .work-card:nth-child(7) .work-title": "Cartoon Storytelling Test",
+      ".work-grid .work-card:nth-child(7) .work-body p": "Created independently for an application test, focusing on character continuity, cinematic environments, shot progression, and story-driven AI video.",
+      ".work-grid .work-card:nth-child(7) .project-facts span:nth-child(1)": "Role · AI video production",
+      ".work-grid .work-card:nth-child(7) .project-facts span:nth-child(2)": "Focus · Character consistency & storytelling",
+      ".work-grid .work-card:nth-child(7) .text-link": "Watch full video ↗",
+      ".work-card-cta .kicker": "More relevant work?",
+      ".work-card-cta h3": "I keep the public portfolio curated.",
+      ".work-card-cta p": "For a specific campaign style or production need, message me and I can share the most relevant examples.",
+      ".work-card-cta .button": "Ask for samples",
+      "#services .section-heading .kicker": "Services",
+      "#services .section-heading h2": "Where I can plug into your team.",
+      "#services .section-heading > p": "Built for agencies, studios, and creative teams that already have a brief and need dependable production support.",
+      ".service-card:nth-child(1) h3": "Generative AI Video Production",
+      ".service-card:nth-child(1) p": "Translate a creative brief into AI-generated video outputs, iterate on feedback, and deliver polished short-form assets.",
+      ".service-card:nth-child(2) h3": "FOOH & Social Concepts",
+      ".service-card:nth-child(2) p": "Produce attention-grabbing visual concepts for social-first campaigns, product moments, and experimental advertising.",
+      ".service-card:nth-child(3) h3": "Agency Production Support",
+      ".service-card:nth-child(3) p": "Add extra execution capacity during busy campaign periods without increasing permanent headcount.",
+      ".service-card:nth-child(4) h3": "Motion Graphics & Finishing",
+      ".service-card:nth-child(4) p": "Support AI outputs with editing, typography, motion design, and final delivery for social formats.",
+      "#process .section-heading .kicker": "Process",
+      "#process .section-heading h2": "Simple collaboration, clear handoff.",
+      "#process .section-heading > p": "No secret workflow dump — just the production stages a partner needs to know.",
+      ".process-step:nth-child(1) h3": "Brief",
+      ".process-step:nth-child(1) p": "Align on the creative direction, format, references, deadline, and expected output.",
+      ".process-step:nth-child(2) h3": "Produce",
+      ".process-step:nth-child(2) p": "Build the visual/video output using the AI and editing workflow that best fits the brief.",
+      ".process-step:nth-child(3) h3": "Iterate",
+      ".process-step:nth-child(3) p": "Review feedback, correct weak generations, and refine consistency, motion, and pacing.",
+      ".process-step:nth-child(4) h3": "Deliver",
+      ".process-step:nth-child(4) p": "Return polished final assets in the agreed format, ready for the team or campaign pipeline.",
+      "#about .kicker": "About",
+      "#about h2": "Production-first, with a technical mindset.",
+      ".about-photo figcaption": "Hands-on visual production.",
+      ".about-lead": "I'm Dang Quang Nghia, an AI video creator based in Vietnam. I currently work on AI video deliverables for a Korean creative team, taking assigned briefs through production, iteration, and final delivery.",
+      ".about-copy > p:nth-of-type(2)": "My software-engineering background also shapes how I work: I like repeatable workflows, clear quality checks, and lightweight automation where it genuinely saves production time.",
+      ".contact .kicker": "Production partner",
+      ".contact h2": "Need extra AI video production capacity?",
+      ".contact p": "If your agency or creative team has a project, recurring workload, or a short-term production spike, send me the brief and what you need delivered.",
+      ".contact-actions .button:nth-child(1)": "Email me",
+      ".contact-actions .button:nth-child(2)": "Message on LinkedIn",
+      ".contact-actions .button:nth-child(3)": "Review selected work",
+      ".footer-inner > div:nth-child(2)": "Selected work is shown for portfolio purposes. Rights remain with their respective owners."
+    },
+    html: {
+      ".hero-copy h1": "AI video production for <span>creative teams.</span>"
+    }
+  },
+  vi: {
+    title: "Đặng Quang Nghĩa | Sản xuất AI Video",
+    description: "Sản xuất AI video cho agency, studio và creative team: generative video, FOOH, social content, motion design và production support.",
+    text: {
+      ".nav a:nth-child(1)": "Dự án",
+      ".nav a:nth-child(2)": "Dịch vụ",
+      ".nav a:nth-child(3)": "Quy trình",
+      ".nav a:nth-child(4)": "Giới thiệu",
+      ".header-actions .button-small": "Hợp tác",
+      ".eyebrow": "Nhận dự án ngắn hạn và hợp tác remote dài hạn",
+      ".hero-lead": "Tôi biến brief thành video AI hoàn chỉnh cho social, quảng cáo và FOOH — tập trung vào triển khai rõ ràng, chỉnh sửa nhanh và bàn giao đáng tin cậy.",
+      ".hero-actions .button:nth-child(1)": "Xem dự án nổi bật",
+      ".hero-actions .button:nth-child(2)": "Nhắn qua LinkedIn",
+      ".hero-meta span:nth-child(1)": "Việt Nam · Remote",
+      ".hero-meta span:nth-child(2)": "Sản xuất AI Video",
+      ".hero-meta span:nth-child(3)": "Quảng cáo & Social Content",
+      ".panel-label": "Năng lực sản xuất",
+      ".focus-item:nth-child(1) strong": "Generative video",
+      ".focus-item:nth-child(1) small": "Triển khai từ brief đến bàn giao",
+      ".focus-item:nth-child(2) strong": "FOOH & visual concept",
+      ".focus-item:nth-child(2) small": "Creative output ưu tiên social",
+      ".focus-item:nth-child(3) strong": "Hỗ trợ production cho agency",
+      ".focus-item:nth-child(3) small": "Bổ sung năng lực khi workload tăng",
+      ".panel-note": "Hiện đang sản xuất AI video cho một creative team tại Hàn Quốc.",
+      "#work .section-heading .kicker": "Dự án nổi bật",
+      "#work .section-heading h2": "Kết quả trước lời hứa.",
+      "#work .section-heading > p": "Một số dự án và campaign output đã công khai. Link sẽ mở nguồn đăng gốc khi có.",
+      ".featured-case .visual-tag": "Case nổi bật · Bài đăng gốc",
+      ".featured-case .case-copy h3": "Biến creative brief được giao thành video social hoàn chỉnh.",
+      ".featured-case .case-copy > p": "Sản xuất video FOOH cho Studio AIM theo định hướng của team, chỉnh sửa theo feedback trong quá trình production và bàn giao output cuối.",
+      ".featured-case .case-grid div:nth-child(1) span": "Vai trò",
+      ".featured-case .case-grid div:nth-child(1) strong": "Sản xuất AI video",
+      ".featured-case .case-grid div:nth-child(2) span": "Định dạng",
+      ".featured-case .case-grid div:nth-child(2) strong": "Video social dạng ngắn",
+      ".featured-case .case-grid div:nth-child(3) span": "Hiệu suất công khai",
+      ".featured-case .case-grid div:nth-child(3) strong": "140K+ lượt xem · 2K+ lượt thích",
+      ".featured-case .text-link": "Xem dự án đã đăng ↗",
+      ".work-grid .work-card:nth-child(1) .work-body p": "Tạo sản phẩm âm nhạc có hỗ trợ AI cho cuộc thi Giáng sinh và được chọn vào Top 2.",
+      ".work-grid .work-card:nth-child(1) .text-link": "Xem bài dự thi ↗",
+      ".work-grid .work-card:nth-child(2) .work-body p": "Sản xuất music video bằng AI theo creative direction mang tính meme của campaign.",
+      ".work-grid .work-card:nth-child(2) .text-link": "Xem dự án ↗",
+      ".work-grid .work-card:nth-child(3) .video-badge": "Campaign",
+      ".work-grid .work-card:nth-child(3) .preview-hint": "Preview · Mở video đầy đủ ↗",
+      ".work-grid .work-card:nth-child(3) .work-kicker": "Social Campaign · Bản tiếng Anh",
+      ".work-grid .work-card:nth-child(3) .work-body p": "Sản xuất video giải thích sản phẩm dạng ngắn cho Bitget Pay, tối ưu để truyền tải rõ ràng trên social và campaign của nền tảng.",
+      ".work-grid .work-card:nth-child(3) .project-facts span:nth-child(1)": "Vai trò · Sản xuất video",
+      ".work-grid .work-card:nth-child(3) .project-facts span:nth-child(2)": "Bàn giao · Video social 16:9",
+      ".work-grid .work-card:nth-child(3) .link-row .text-link:nth-child(1)": "Xem video đầy đủ ↗",
+      ".work-grid .work-card:nth-child(3) .link-row .text-link:nth-child(2)": "Dự án LBank ↗",
+      ".work-grid .work-card:nth-child(4) .embed-card-badge": "Motion design",
+      ".work-grid .work-card:nth-child(4) .work-body p": "Tạo motion graphic promo bằng typography động và ngôn ngữ hình ảnh Web3 trong Adobe After Effects.",
+      ".work-grid .work-card:nth-child(4) .text-link": "Xem dự án ↗",
+      ".work-grid .work-card:nth-child(5) .embed-card-badge": "Dự án trước đây",
+      ".work-grid .work-card:nth-child(5) .work-body p": "Lên concept, viết kịch bản, quay và dựng video marketing phong cách guerrilla cho hệ sinh thái Floki.",
+      ".work-grid .work-card:nth-child(5) .text-link": "Xem dự án ↗",
+      ".work-grid .work-card:nth-child(6) .poster-badge": "Quảng cáo",
+      ".work-grid .work-card:nth-child(6) .preview-hint": "Preview · Xem video đầy đủ ↗",
+      ".work-grid .work-card:nth-child(6) .work-kicker": "TVC sản phẩm · 9:16",
+      ".work-grid .work-card:nth-child(6) .work-title": "Quảng cáo sản phẩm dạng ngắn",
+      ".work-grid .work-card:nth-child(6) .work-body p": "Tạo TVC dọc tập trung vào sản phẩm với pack shot chỉn chu, biến thể hương vị, chuyển động và nhịp dựng phù hợp social.",
+      ".work-grid .work-card:nth-child(6) .project-facts span:nth-child(1)": "Vai trò · Sản xuất & dựng AI video",
+      ".work-grid .work-card:nth-child(6) .project-facts span:nth-child(2)": "Định dạng · Quảng cáo 9:16",
+      ".work-grid .work-card:nth-child(6) .text-link": "Xem video đầy đủ ↗",
+      ".work-grid .work-card:nth-child(7) .poster-badge": "Bài test ứng tuyển",
+      ".work-grid .work-card:nth-child(7) .preview-hint": "Preview · Xem video đầy đủ ↗",
+      ".work-grid .work-card:nth-child(7) .work-kicker": "Character Storytelling · Bài làm cá nhân",
+      ".work-grid .work-card:nth-child(7) .work-title": "Cartoon Storytelling Test",
+      ".work-grid .work-card:nth-child(7) .work-body p": "Tự thực hiện cho bài test ứng tuyển, tập trung vào tính nhất quán nhân vật, bối cảnh điện ảnh, tiến triển shot và kể chuyện bằng AI video.",
+      ".work-grid .work-card:nth-child(7) .project-facts span:nth-child(1)": "Vai trò · Sản xuất AI video",
+      ".work-grid .work-card:nth-child(7) .project-facts span:nth-child(2)": "Trọng tâm · Nhất quán nhân vật & storytelling",
+      ".work-grid .work-card:nth-child(7) .text-link": "Xem video đầy đủ ↗",
+      ".work-card-cta .kicker": "Cần xem thêm dự án phù hợp?",
+      ".work-card-cta h3": "Portfolio public được chọn lọc.",
+      ".work-card-cta p": "Nếu bạn cần một style campaign hoặc dạng production cụ thể, hãy nhắn tôi để nhận các sample phù hợp nhất.",
+      ".work-card-cta .button": "Yêu cầu sample",
+      "#services .section-heading .kicker": "Dịch vụ",
+      "#services .section-heading h2": "Tôi có thể hỗ trợ team ở đâu.",
+      "#services .section-heading > p": "Dành cho agency, studio và creative team đã có brief và cần thêm năng lực production đáng tin cậy.",
+      ".service-card:nth-child(1) h3": "Sản xuất Generative AI Video",
+      ".service-card:nth-child(1) p": "Chuyển creative brief thành video tạo bằng AI, chỉnh sửa theo feedback và bàn giao asset dạng ngắn đã hoàn thiện.",
+      ".service-card:nth-child(2) h3": "FOOH & Social Concept",
+      ".service-card:nth-child(2) p": "Sản xuất visual concept thu hút cho social campaign, product moment và quảng cáo thử nghiệm.",
+      ".service-card:nth-child(3) h3": "Production Support cho Agency",
+      ".service-card:nth-child(3) p": "Bổ sung năng lực triển khai trong giai đoạn campaign bận rộn mà không cần tăng nhân sự cố định.",
+      ".service-card:nth-child(4) h3": "Motion Graphics & Hoàn thiện",
+      ".service-card:nth-child(4) p": "Bổ trợ output AI bằng dựng phim, typography, motion design và bàn giao cuối cho các định dạng social.",
+      "#process .section-heading .kicker": "Quy trình",
+      "#process .section-heading h2": "Hợp tác đơn giản, bàn giao rõ ràng.",
+      "#process .section-heading > p": "Không công khai workflow nội bộ — chỉ những giai đoạn production mà đối tác cần biết.",
+      ".process-step:nth-child(1) h3": "Brief",
+      ".process-step:nth-child(1) p": "Thống nhất creative direction, định dạng, reference, deadline và output mong muốn.",
+      ".process-step:nth-child(2) h3": "Sản xuất",
+      ".process-step:nth-child(2) p": "Tạo visual/video bằng workflow AI và editing phù hợp nhất với brief.",
+      ".process-step:nth-child(3) h3": "Chỉnh sửa",
+      ".process-step:nth-child(3) p": "Nhận feedback, sửa generation yếu và tinh chỉnh consistency, motion cùng pacing.",
+      ".process-step:nth-child(4) h3": "Bàn giao",
+      ".process-step:nth-child(4) p": "Bàn giao asset cuối đã hoàn thiện theo định dạng thống nhất, sẵn sàng cho team hoặc campaign pipeline.",
+      "#about .kicker": "Giới thiệu",
+      "#about h2": "Production-first, kết hợp tư duy kỹ thuật.",
+      ".about-photo figcaption": "Trực tiếp tham gia visual production.",
+      ".about-lead": "Tôi là Đặng Quang Nghĩa, AI video creator tại Việt Nam. Hiện tôi thực hiện các AI video deliverable cho một creative team tại Hàn Quốc, từ brief được giao đến production, chỉnh sửa và bàn giao cuối.",
+      ".about-copy > p:nth-of-type(2)": "Nền tảng software engineering cũng ảnh hưởng đến cách tôi làm việc: ưu tiên workflow có thể lặp lại, quality check rõ ràng và automation gọn nhẹ khi thực sự giúp tiết kiệm thời gian production.",
+      ".contact .kicker": "Production partner",
+      ".contact h2": "Team của bạn đang cần thêm năng lực sản xuất AI video?",
+      ".contact p": "Nếu agency hoặc creative team của bạn có dự án, workload định kỳ hoặc cần tăng production trong thời gian ngắn, hãy gửi brief và output cần bàn giao cho tôi.",
+      ".contact-actions .button:nth-child(1)": "Gửi email",
+      ".contact-actions .button:nth-child(2)": "Nhắn qua LinkedIn",
+      ".contact-actions .button:nth-child(3)": "Xem dự án nổi bật",
+      ".footer-inner > div:nth-child(2)": "Các dự án được hiển thị cho mục đích portfolio. Quyền sở hữu thuộc về các bên tương ứng."
+    },
+    html: {
+      ".hero-copy h1": "Sản xuất AI video cho <span>creative team.</span>"
+    }
+  }
+};
+
+function applyLanguage(lang) {
+  const pack = translations[lang] || translations.en;
+  document.documentElement.lang = lang;
+  document.title = pack.title;
+
+  const description = document.querySelector('meta[name="description"]');
+  if (description) description.setAttribute("content", pack.description);
+
+  Object.entries(pack.text).forEach(([selector, value]) => {
+    const node = document.querySelector(selector);
+    if (node) node.textContent = value;
+  });
+
+  Object.entries(pack.html).forEach(([selector, value]) => {
+    const node = document.querySelector(selector);
+    if (node) node.innerHTML = value;
+  });
+
+  document.querySelectorAll(".lang-button").forEach((button) => {
+    const active = button.dataset.lang === lang;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+
+  try { localStorage.setItem("portfolio-language", lang); } catch {}
+}
+
+document.querySelectorAll(".lang-button").forEach((button) => {
+  button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+});
+
+let initialLanguage = "en";
+try {
+  const stored = localStorage.getItem("portfolio-language");
+  if (stored === "vi" || stored === "en") initialLanguage = stored;
+} catch {}
+applyLanguage(initialLanguage);
