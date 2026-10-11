@@ -246,6 +246,115 @@ const translations = {
   }
 };
 
+
+// Compact copy and updated media gallery, in both existing languages.
+const compactCopy = {
+  en: {
+    text: {
+      ".hero-lead": "I turn briefs and references into character animation, commercials, and finished AI videos.",
+      ".focus-item:nth-child(1) small": "Consistency · storytelling",
+      ".focus-item:nth-child(2) small": "Product · brand · social",
+      ".focus-item:nth-child(3) small": "Shots · editing · revisions",
+      ".panel-note": "Recent production experience with Studio AIM.",
+      "#work .section-heading h2": "Watch the work.",
+      "#work .section-heading p": "Selected AI films, commercials, and edits. Open a video here or view its original file.",
+      ".showcase-card:nth-child(1) .showcase-category": "Character animation",
+      ".showcase-card:nth-child(1) .showcase-copy h3": "Animated Character Film",
+      ".showcase-card:nth-child(1) .showcase-copy p": "Character consistency · cinematic storytelling",
+      ".showcase-card:nth-child(1) .showcase-copy a": "Full film ↗",
+      ".showcase-card:nth-child(2) .showcase-category": "Product commercial · 9:16",
+      ".showcase-card:nth-child(2) .showcase-copy h3": "InnoSupps Product Commercial",
+      ".showcase-card:nth-child(2) .showcase-copy p": "Product visuals · AI video · editing",
+      ".showcase-card:nth-child(2) .showcase-copy a": "Full film ↗",
+      ".showcase-card:nth-child(3) .showcase-category": "Campaign editing",
+      ".showcase-card:nth-child(3) .showcase-copy h3": "Bitget Pay Campaign",
+      ".showcase-card:nth-child(3) .showcase-copy p": "Social video · pacing · finishing",
+      ".showcase-card:nth-child(3) .showcase-copy a": "Full film ↗",
+      ".showcase-proof .kicker": "Published studio work",
+      ".showcase-proof h3": "Studio AIM · FOOH",
+      ".showcase-proof p": "Produced assigned shots from the studio's brief, with revisions and final delivery.",
+      ".showcase-proof-footer .text-link": "Published post ↗",
+      ".additional-label": "More work",
+      "#services .section-heading p": "Production support from brief to delivery.",
+      ".service-card:nth-child(1) p": "AI shots and polished videos from briefs.",
+      ".service-card:nth-child(2) p": "Consistent characters and story-driven shots.",
+      ".service-card:nth-child(3) p": "Product videos and social-ready commercials.",
+      ".service-card:nth-child(4) p": "Extra hands for editing, iterations, and delivery.",
+      "#process .section-heading h2": "How I make the work.",
+      "#process .section-heading p": "From idea to final delivery.",
+      ".process-step:nth-child(1) h3": "Creative planning",
+      ".process-step:nth-child(1) p": "Brief · treatment · scene/shot list · keyframes",
+      ".process-step:nth-child(2) h3": "AI production",
+      ".process-step:nth-child(2) p": "Image generation · video generation · shot selection",
+      ".process-step:nth-child(3) h3": "Edit & sound",
+      ".process-step:nth-child(3) p": "Assembly · motion · pacing · audio finishing",
+      ".process-step:nth-child(4) h3": "Delivery & iteration",
+      ".process-step:nth-child(4) p": "Quality checks · feedback · polished output",
+      "#about .about-heading h2": "Production-first. Easy to work with.",
+      ".about-copy .about-lead": "I'm Nghia, an AI video producer and editor in Vietnam. I recently worked remotely with Studio AIM on brief-led production and delivery.",
+      ".about-copy > p:nth-of-type(2)": "I work with clear shot plans, feedback loops, and quality checks.",
+      ".contact h2": "Have a brief? Let's talk.",
+      ".contact p": "Send your brief, references, and deadline.",
+      "#video-dialog-link": "Open video in Google Drive ↗"
+    },
+    html: {".hero-copy .eyebrow": "<span class=\"dot\"></span> Available for remote projects"}
+  },
+  vi: {
+    text: {
+      ".hero-lead": "Tôi biến brief và reference thành AI animation, video quảng cáo và bản dựng hoàn chỉnh.",
+      ".focus-item:nth-child(1) small": "Nhất quán nhân vật · kể chuyện",
+      ".focus-item:nth-child(2) small": "Sản phẩm · thương hiệu · social",
+      ".focus-item:nth-child(3) small": "Cảnh quay · dựng · chỉnh sửa",
+      ".panel-note": "Kinh nghiệm gần đây tại Studio AIM.",
+      "#work .section-heading h2": "Xem sản phẩm thực tế.",
+      "#work .section-heading p": "AI film, quảng cáo và video editing nổi bật. Xem tại đây hoặc mở video gốc.",
+      ".showcase-card:nth-child(1) .showcase-category": "Hoạt hình nhân vật",
+      ".showcase-card:nth-child(1) .showcase-copy h3": "Phim hoạt hình AI",
+      ".showcase-card:nth-child(1) .showcase-copy p": "Nhất quán nhân vật · kể chuyện điện ảnh",
+      ".showcase-card:nth-child(1) .showcase-copy a": "Xem đầy đủ ↗",
+      ".showcase-card:nth-child(2) .showcase-category": "Quảng cáo sản phẩm · 9:16",
+      ".showcase-card:nth-child(2) .showcase-copy h3": "Quảng cáo sản phẩm InnoSupps",
+      ".showcase-card:nth-child(2) .showcase-copy p": "Hình ảnh sản phẩm · AI video · dựng phim",
+      ".showcase-card:nth-child(2) .showcase-copy a": "Xem đầy đủ ↗",
+      ".showcase-card:nth-child(3) .showcase-category": "Dựng video chiến dịch",
+      ".showcase-card:nth-child(3) .showcase-copy h3": "Chiến dịch Bitget Pay",
+      ".showcase-card:nth-child(3) .showcase-copy p": "Video social · nhịp dựng · hoàn thiện",
+      ".showcase-card:nth-child(3) .showcase-copy a": "Xem đầy đủ ↗",
+      ".showcase-proof .kicker": "Dự án studio đã xuất bản",
+      ".showcase-proof h3": "Studio AIM · FOOH",
+      ".showcase-proof p": "Thực hiện video theo brief của studio, chỉnh sửa và bàn giao final.",
+      ".showcase-proof-footer .text-link": "Xem bài đăng gốc ↗",
+      ".additional-label": "Dự án khác",
+      "#services .section-heading p": "Hỗ trợ sản xuất từ brief đến bàn giao.",
+      ".service-card:nth-child(1) p": "Sản xuất cảnh quay AI và video hoàn chỉnh.",
+      ".service-card:nth-child(2) p": "Nhân vật nhất quán, chuyển cảnh có câu chuyện.",
+      ".service-card:nth-child(3) p": "Quảng cáo sản phẩm và video social.",
+      ".service-card:nth-child(4) p": "Hỗ trợ dựng phim, chỉnh sửa, bàn giao.",
+      "#process .section-heading h2": "Quy trình thực hiện.",
+      "#process .section-heading p": "Từ ý tưởng đến video hoàn chỉnh.",
+      ".process-step:nth-child(1) h3": "Lập kế hoạch sáng tạo",
+      ".process-step:nth-child(1) p": "Brief · treatment · scene/shot list · keyframe",
+      ".process-step:nth-child(2) h3": "Sản xuất bằng AI",
+      ".process-step:nth-child(2) p": "Tạo ảnh · tạo video · chọn cảnh",
+      ".process-step:nth-child(3) h3": "Dựng & âm thanh",
+      ".process-step:nth-child(3) p": "Ghép cảnh · chuyển động · nhịp dựng · âm thanh",
+      ".process-step:nth-child(4) h3": "Bàn giao & tinh chỉnh",
+      ".process-step:nth-child(4) p": "Kiểm tra chất lượng · feedback · xuất final",
+      "#about .about-heading h2": "Chú trọng sản xuất và hợp tác.",
+      ".about-copy .about-lead": "Tôi là Nghĩa, AI video producer/editor tại Việt Nam. Gần đây tôi làm việc remote cho Studio AIM, thực hiện video theo brief và bàn giao sản phẩm.",
+      ".about-copy > p:nth-of-type(2)": "Tôi ưu tiên shot plan rõ ràng, feedback và kiểm soát chất lượng.",
+      ".contact h2": "Có brief? Trao đổi nhé.",
+      ".contact p": "Gửi brief, reference và deadline cho tôi.",
+      "#video-dialog-link": "Mở video trên Google Drive ↗"
+    },
+    html: {".hero-copy .eyebrow": "<span class=\"dot\"></span> Nhận dự án remote"}
+  }
+};
+for (const lang of ["en", "vi"]) {
+  Object.assign(translations[lang].text, compactCopy[lang].text);
+  Object.assign(translations[lang].html, compactCopy[lang].html);
+}
+
 function applyLanguage(lang) {
   const pack = translations[lang] || translations.en;
   document.documentElement.lang = lang;
@@ -283,3 +392,44 @@ try {
   if (stored === "vi" || stored === "en") initialLanguage = stored;
 } catch {}
 applyLanguage(initialLanguage);
+
+
+// Play the published Google Drive files in a compact viewer, with a direct-link fallback.
+const viewer = document.getElementById("video-dialog");
+const viewerFrame = document.getElementById("video-dialog-frame");
+const viewerTitle = document.getElementById("video-dialog-title");
+const viewerLink = document.getElementById("video-dialog-link");
+let lastPreviewButton = null;
+document.querySelectorAll("[data-drive-preview]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const fileId = button.dataset.drivePreview;
+    if (!/^[A-Za-z0-9_-]+$/.test(fileId || "")) return;
+    const title = button.dataset.projectTitle || "Video preview";
+    lastPreviewButton = button;
+    viewerTitle.textContent = title;
+    viewerFrame.title = title;
+    viewerFrame.src = "https://drive.google.com/file/d/" + fileId + "/preview";
+    viewerLink.href = "https://drive.google.com/file/d/" + fileId + "/view";
+    if (viewer && typeof viewer.showModal === "function") {
+      viewer.showModal();
+    } else {
+      window.open(viewerLink.href, "_blank", "noopener");
+    }
+  });
+  const poster = button.querySelector("img");
+  if (poster) poster.addEventListener("error", () => {
+    poster.hidden = true;
+    button.classList.add("preview-image-missing");
+  });
+});
+if (viewer) {
+  const close = () => viewer.close();
+  document.getElementById("video-dialog-close")?.addEventListener("click", close);
+  viewer.addEventListener("click", (event) => {
+    if (event.target === viewer) close();
+  });
+  viewer.addEventListener("close", () => {
+    viewerFrame.removeAttribute("src");
+    lastPreviewButton?.focus();
+  });
+}
